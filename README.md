@@ -17,14 +17,7 @@ Simply because no matter what they say, any forecast beyond next three days beco
 ### Dependencies :
 - Perl - Perl (Practical Extraction and Reporting Language) originally developed by Larry Wall is a family of high-level, general-purpose, interpreted, dynamic programming languages. [Perl] is available in repositories of almost every Linux distribution under the sun. Use your distribution's package manager to install it.
 - curl - [curl] is a command line tool and library for transferring data with URL syntax. curl is available in repositories of almost every Linux distribution so you can install curl easily via your package manager.
-- jq - jq is like sed for JSON data. You can use [jq] to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text. If you are running a 32-bit Linux distribution, download jq from here,
-
-[jq 1.4 for 32-bit systems]
-
-And if you are running a 64-bit Linux distribution, download jq from here,
-
-[jq 1.4 for 64-bit systems]
-
+- jq - jq is like sed for JSON data. You can use [jq] to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text. If you are running a 32-bit Linux distribution, download [jq 1.4 for 32-bit systems]. But if you are running a 64-bit Linux distribution, download [jq 1.4 for 64-bit systems].
 
 
 ### Installation :
