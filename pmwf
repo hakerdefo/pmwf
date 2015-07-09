@@ -1,8 +1,8 @@
 #!/bin/bash
 
-latit=21.024
-longi=72.889
-uneet=metric
+latit=
+longi=
+uneet=
 
 curl -s --connect-timeout 30 -o /tmp/pmwf.json "http://api.openweathermap.org/data/2.5/forecast/daily?lat=$latit&lon=$longi&cnt=4&units=$uneet&mode=json"
 
