@@ -2,13 +2,13 @@
 pmwf displays detailed 4 day weather forecast for almost any location in the world.
 pmwf shows information for following weather parameters,
 
+- Weather Condition
 - Minimum Temperature
 - Maximum Temperature
 - Atmospheric Pressure
 - Humidity
-- Wind speed
-- Wind direction
-- Weather condition
+- Wind Speed
+- Wind Direction
 
 Why forecast for only 4 days you might wonder?
 Simply because no matter what they say, any forecast beyond next three days becomes less & less accurate. This is the reason why pmwf shows the weather forecast for current day and the next three days.
