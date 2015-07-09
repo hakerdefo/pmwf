@@ -1,8 +1,8 @@
 #!/bin/bash
 
-latit=
-longi=
-uneet=
+latit=21.024
+longi=72.889
+uneet=metric
 
 curl -s --connect-timeout 30 -o /tmp/pmwf.json "http://api.openweathermap.org/data/2.5/forecast/daily?lat=$latit&lon=$longi&cnt=4&units=$uneet&mode=json"
 
@@ -72,10 +72,10 @@ symb2=kph
 fi
 
 echo ""
-echo ""
 echo -e "Weather forecast for $place, $nation:"
 echo ""
 echo -e "Forecast dates are given in GMT."
+echo ""
 echo ""
 echo -e "Forecast for $time11:"
 echo ""
