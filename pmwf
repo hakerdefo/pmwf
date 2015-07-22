@@ -1,12 +1,15 @@
 #!/bin/bash
 
+clear
+
 latit=
 longi=
 uneet=
 
-curl -s --connect-timeout 30 -o /tmp/pmwf.json "http://api.openweathermap.org/data/2.5/forecast/daily?lat=$latit&lon=$longi&cnt=4&units=$uneet&mode=json"
+curl -s --connect-timeout 30 -o /tmp/current.json "http://api.openweathermap.org/data/2.5/weather?lat=$latit&lon=$longi&units=$uneet&mode=json"
+curl -s --connect-timeout 30 -o /tmp/forecast.json "http://api.openweathermap.org/data/2.5/forecast/daily?lat=$latit&lon=$longi&cnt=4&units=$uneet&mode=json"
 
-if [ ! -f /tmp/pmwf.json ]; then
+if [ ! -f /tmp/forecast.json ]; then
 echo ""
 echo -e "Unable to connect to openweathermap.org!"
 echo -e "Check your internet connection!"
@@ -15,55 +18,52 @@ echo ""
 exit 1
 
 else
-place=$(cat /tmp/pmwf.json | jq -r '.city.name')
-nation=$(cat /tmp/pmwf.json | jq -r '.city.country')
-time1=$(cat /tmp/pmwf.json | jq -r '.list[0].dt')
-time2=$(cat /tmp/pmwf.json | jq -r '.list[1].dt')
-time3=$(cat /tmp/pmwf.json | jq -r '.list[2].dt')
-time4=$(cat /tmp/pmwf.json | jq -r '.list[3].dt')
-time11=$(date -d @"$time1" +'%A, %d %B %Y')
+place=$(cat /tmp/forecast.json | jq -r '.city.name')
+nation=$(cat /tmp/forecast.json | jq -r '.city.country')
+time2=$(cat /tmp/forecast.json | jq -r '.list[1].dt')
+time3=$(cat /tmp/forecast.json | jq -r '.list[2].dt')
+time4=$(cat /tmp/forecast.json | jq -r '.list[3].dt')
 time22=$(date -d @"$time2" +'%A, %d %B %Y')
 time33=$(date -d @"$time3" +'%A, %d %B %Y')
 time44=$(date -d @"$time4" +'%A, %d %B %Y')
-min1=$(cat /tmp/pmwf.json | jq -r '.list[0].temp.min')
-min2=$(cat /tmp/pmwf.json | jq -r '.list[1].temp.min')
-min3=$(cat /tmp/pmwf.json | jq -r '.list[2].temp.min')
-min4=$(cat /tmp/pmwf.json | jq -r '.list[3].temp.min')
-max1=$(cat /tmp/pmwf.json | jq -r '.list[0].temp.max')
-max2=$(cat /tmp/pmwf.json | jq -r '.list[1].temp.max')
-max3=$(cat /tmp/pmwf.json | jq -r '.list[2].temp.max')
-max4=$(cat /tmp/pmwf.json | jq -r '.list[3].temp.max')
-pressure1=$(cat /tmp/pmwf.json | jq -r '.list[0].pressure')
-pressure2=$(cat /tmp/pmwf.json | jq -r '.list[1].pressure')
-pressure3=$(cat /tmp/pmwf.json | jq -r '.list[2].pressure')
-pressure4=$(cat /tmp/pmwf.json | jq -r '.list[3].pressure')
-humid1=$(cat /tmp/pmwf.json | jq -r '.list[0].humidity')
-humid2=$(cat /tmp/pmwf.json | jq -r '.list[1].humidity')
-humid3=$(cat /tmp/pmwf.json | jq -r '.list[2].humidity')
-humid4=$(cat /tmp/pmwf.json | jq -r '.list[3].humidity')
-wind1=$(cat /tmp/pmwf.json | jq -r '.list[0].speed')
-wind2=$(cat /tmp/pmwf.json | jq -r '.list[1].speed')
-wind3=$(cat /tmp/pmwf.json | jq -r '.list[2].speed')
-wind4=$(cat /tmp/pmwf.json | jq -r '.list[3].speed')
-dire1=$(cat /tmp/pmwf.json | jq -r '.list[0].deg')
-dire2=$(cat /tmp/pmwf.json | jq -r '.list[1].deg')
-dire3=$(cat /tmp/pmwf.json | jq -r '.list[2].deg')
-dire4=$(cat /tmp/pmwf.json | jq -r '.list[3].deg')
-condi1=$(cat /tmp/pmwf.json | jq -r '.list[0].weather[].description')
-condi2=$(cat /tmp/pmwf.json | jq -r '.list[1].weather[].description')
-condi3=$(cat /tmp/pmwf.json | jq -r '.list[2].weather[].description')
-condi4=$(cat /tmp/pmwf.json | jq -r '.list[3].weather[].description')
+tempcurrent=$(cat /tmp/current.json | jq -r '.main.temp')
+min2=$(cat /tmp/forecast.json | jq -r '.list[1].temp.min')
+min3=$(cat /tmp/forecast.json | jq -r '.list[2].temp.min')
+min4=$(cat /tmp/forecast.json | jq -r '.list[3].temp.min')
+max2=$(cat /tmp/forecast.json | jq -r '.list[1].temp.max')
+max3=$(cat /tmp/forecast.json | jq -r '.list[2].temp.max')
+max4=$(cat /tmp/forecast.json | jq -r '.list[3].temp.max')
+pressurecurrent=$(cat /tmp/current.json | jq -r '.main.pressure')
+pressure2=$(cat /tmp/forecast.json | jq -r '.list[1].pressure')
+pressure3=$(cat /tmp/forecast.json | jq -r '.list[2].pressure')
+pressure4=$(cat /tmp/forecast.json | jq -r '.list[3].pressure')
+humidcurrent=$(cat /tmp/current.json | jq -r '.main.humidity')
+humid2=$(cat /tmp/forecast.json | jq -r '.list[1].humidity')
+humid3=$(cat /tmp/forecast.json | jq -r '.list[2].humidity')
+humid4=$(cat /tmp/forecast.json | jq -r '.list[3].humidity')
+windcurrent=$(cat /tmp/current.json | jq -r '.wind.speed')
+wind2=$(cat /tmp/forecast.json | jq -r '.list[1].speed')
+wind3=$(cat /tmp/forecast.json | jq -r '.list[2].speed')
+wind4=$(cat /tmp/forecast.json | jq -r '.list[3].speed')
+direcurrent=$(cat /tmp/current.json | jq -r '.wind.deg')
+dire2=$(cat /tmp/forecast.json | jq -r '.list[1].deg')
+dire3=$(cat /tmp/forecast.json | jq -r '.list[2].deg')
+dire4=$(cat /tmp/forecast.json | jq -r '.list[3].deg')
+condicurrent=$(cat /tmp/current.json | jq -r '.weather[].description')
+condi2=$(cat /tmp/forecast.json | jq -r '.list[1].weather[].description')
+condi3=$(cat /tmp/forecast.json | jq -r '.list[2].weather[].description')
+condi4=$(cat /tmp/forecast.json | jq -r '.list[3].weather[].description')
 
 if [ "$uneet" == imperial ]
 then
-wind11="$wind1"
+windcurrent1="$windcurrent"
 wind22="$wind2"
 wind33="$wind3"
 wind44="$wind4"
 symb=°F
 symb2=mph
 else
-wind11=$(perl -le 'print $ARGV[0] * 3.6' "$wind1")
+windcurrent1=$(perl -le 'print $ARGV[0] * 3.6' "$windcurrent")
 wind22=$(perl -le 'print $ARGV[0] * 3.6' "$wind2")
 wind33=$(perl -le 'print $ARGV[0] * 3.6' "$wind3")
 wind44=$(perl -le 'print $ARGV[0] * 3.6' "$wind4")
@@ -72,20 +72,16 @@ symb2=kph
 fi
 
 echo ""
-echo -e "Weather forecast for $place, $nation:"
+echo -e "Location - $place, $nation:"
 echo ""
-echo -e "Forecast dates are given in GMT."
+echo -e "Current weather conditions:"
 echo ""
-echo ""
-echo -e "Forecast for $time11:"
-echo ""
-echo -e "Minimum Temperature - $min1 $symb"
-echo -e "Maximum Temperature - $max1 $symb"
-echo -e "Atmospheric Pressure - $pressure1 hPa"
-echo -e "Humidity - $humid1 %"
-echo -e "Wind speed - $wind11 $symb2"
-echo -e "Wind direction - $dire1°"
-echo -e "Weather condition - $condi1"
+echo -e "Temperature - $tempcurrent $symb"
+echo -e "Atmospheric Pressure - $pressurecurrent hPa"
+echo -e "Humidity - $humidcurrent %"
+echo -e "Wind speed - $windcurrent1 $symb2"
+echo -e "Wind direction - $direcurrent°"
+echo -e "Weather condition - $condicurrent"
 echo ""
 echo ""
 echo -e "Forecast for $time22:"
@@ -120,9 +116,9 @@ echo -e "Wind speed - $wind44 $symb2"
 echo -e "Wind direction - $dire4°"
 echo -e "Weather condition - $condi4"
 echo ""
-echo ""
 
-rm /tmp/pmwf.json
+rm /tmp/forecast.json
+rm /tmp/current.json
 
 fi
 
