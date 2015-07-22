@@ -1,5 +1,5 @@
 # pmwf
-pmwf displays detailed 4 day weather forecast for almost any location in the world.
+pmwf displays current weather conditions with a 3 days weather forecast for almost any location in the world.
 pmwf shows information for following weather parameters,
 
 - Weather Condition
@@ -10,8 +10,8 @@ pmwf shows information for following weather parameters,
 - Wind Speed
 - Wind Direction
 
-Why forecast for only 4 days you might wonder?
-Simply because no matter what they say, any forecast beyond next three days becomes less & less accurate. This is the reason why pmwf shows the weather forecast for current day and the next three days.
+Why forecast for only 3 days you might wonder?
+Simply because no matter what they say, any forecast beyond next three days becomes less & less accurate. This is the reason why pmwf shows the current weather conditions and forecast for the next three days.
 
 
 ### Dependencies :
@@ -58,7 +58,7 @@ $ sudo chmod a+x /usr/local/bin/jq
 
 
 ### Usage :
-Open terminal, type pmwf, hit Enter and you'll have a 4 day weather forecast of your location right in terminal.
+Open terminal, type pmwf, hit Enter and you'll have current weather conditions with a 3 day weather forecast of your location right in terminal.
 
 
 ### Credits :
