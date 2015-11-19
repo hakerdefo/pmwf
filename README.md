@@ -21,7 +21,7 @@ Simply because no matter what they say, any forecast beyond next three days beco
 
 
 ### Installation :
-Installing pmwf is easy. Download [pmwf-master.zip] and extract it. Open the file 'pmwf' in your favourite text editor. Right at the beginning of the file you will find three empty variables 'latit', 'longi', and 'uneet'. You need to assign latitude of your location to the variable 'latit', longitude of your location to the variable 'longi' and your preferred units system to the variable 'uneet'. Chances are that you don't know latitude-longitude values for the place you live. No worries! It's easy. Tageo has geographic coordinate information of over 2667417 places across 193 countries. Go the following Tageo page and search for the latitude-longitude of your location,
+Installing pmwf is easy. Download [pmwf-master.zip] and extract it. Open the file 'pmwf' in your favourite text editor. Right at the beginning of the file you will find four empty variables 'latit', 'longi', 'uneet' & 'apkey'. You need to assign latitude of your location to the variable 'latit', longitude of your location to the variable 'longi' and your preferred units system to the variable 'uneet'. Chances are that you don't know latitude-longitude values for the place you live. No worries! It's easy. Tageo has geographic coordinate information of over 2667417 places across 193 countries. Go the following Tageo page and search for the latitude-longitude of your location,
 
 [Tageo WorldWide Index]
 
@@ -38,6 +38,11 @@ latit=40.714
 longi=-74.006
 uneet=imperial
 ```
+Next and final step is to get an API key from OpenWeatherMap. Don't worry it's simple and their free plan is good enough for our needs. Here is the link to the sign up page of OpenWeatherMap,
+
+[OpenWeatherMap Sign Up]
+
+After registration you'll get your unique API key. Assign this key to 'apkey' variable in the file.
 Save the file after making the necessary changes.
 Next copy the file 'pmwf' to '/usr/local/bin/' directory,
 ```sh
@@ -76,4 +81,5 @@ This work (<span property="dct:title">pmwf</span>, by [<span property="dct:title
 [jq 1.4 for 64-bit systems]:https://stedolan.github.io/jq/download/linux64/jq
 [pmwf-master.zip]:https://github.com/hakerdefo/pmwf/archive/master.zip
 [Tageo WorldWide Index]:http://www.tageo.com/index.php?show=search
+[OpenWeatherMap Sign Up]:http://openweathermap.org/register
 [OpenWeatherMap]:http://openweathermap.org/
