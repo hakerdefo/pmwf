@@ -5,9 +5,10 @@ clear
 latit=
 longi=
 uneet=
+apkey=
 
-curl -s --connect-timeout 30 -o /tmp/current.json "http://api.openweathermap.org/data/2.5/weather?lat=$latit&lon=$longi&units=$uneet&mode=json"
-curl -s --connect-timeout 30 -o /tmp/forecast.json "http://api.openweathermap.org/data/2.5/forecast/daily?lat=$latit&lon=$longi&cnt=4&units=$uneet&mode=json"
+curl -s --connect-timeout 30 -o /tmp/current.json "http://api.openweathermap.org/data/2.5/weather?lat=$latit&lon=$longi&units=$uneet&mode=json&APPID=$apkey"
+curl -s --connect-timeout 30 -o /tmp/forecast.json "http://api.openweathermap.org/data/2.5/forecast/daily?lat=$latit&lon=$longi&cnt=4&units=$uneet&mode=json&APPID=$apkey"
 
 if [ ! -f /tmp/forecast.json ]; then
 echo ""
