@@ -17,7 +17,8 @@ Simply because no matter what they say, any forecast beyond next three days beco
 ### Dependencies :
 - Perl - Perl (Practical Extraction and Reporting Language) originally developed by Larry Wall is a family of high-level, general-purpose, interpreted, dynamic programming languages. [Perl] is available in repositories of almost every Linux distribution under the sun. Use your distribution's package manager to install it.
 - curl - [curl] is a command line tool and library for transferring data with URL syntax. curl is available in repositories of almost every Linux distribution so you can install curl easily via your package manager.
-- jq - jq is like sed for JSON data. You can use [jq] to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text. If you are running a 32-bit Linux distribution, download [jq 1.4 for 32-bit systems]. But if you are running a 64-bit Linux distribution, download [jq 1.4 for 64-bit systems].
+- jq - jq is like sed for JSON data. You can use [jq] to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text. jq is available in the repositories of Debian, Ubuntu, Fedora, openSUSE, Arch (AUR), FreeBSD (FreshPorts), Solaris (OpenCSW), OS X (Homebrew). Linux and OS X binaries are also available from the Download section of jq website. If you decide to use the jq binary directly from the jq website you will have to rename it after downloading from 'jq-linux64' or 'jq-linux32' to simply 'jq'. In case of OS X rename it to 'jq' from 'jq-osx-amd64'. Here is the link to the download page of jq,
+[Download jq]
 
 
 ### Installation :
@@ -77,8 +78,7 @@ This work (<span property="dct:title">pmwf</span>, by [<span property="dct:title
 [perl]:https://www.perl.org
 [curl]:http://curl.haxx.se
 [jq]:https://stedolan.github.io/jq/
-[jq 1.4 for 32-bit systems]:https://stedolan.github.io/jq/download/linux32/jq
-[jq 1.4 for 64-bit systems]:https://stedolan.github.io/jq/download/linux64/jq
+[Download jq]:https://stedolan.github.io/jq/download/
 [pmwf-master.zip]:https://github.com/hakerdefo/pmwf/archive/master.zip
 [Tageo WorldWide Index]:http://www.tageo.com/index.php?show=search
 [OpenWeatherMap Sign Up]:http://openweathermap.org/register
