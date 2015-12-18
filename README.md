@@ -18,6 +18,7 @@ Simply because no matter what they say, any forecast beyond next three days beco
 - Perl - Perl (Practical Extraction and Reporting Language) originally developed by Larry Wall is a family of high-level, general-purpose, interpreted, dynamic programming languages. [Perl] is available in repositories of almost every Linux distribution under the sun. Use your distribution's package manager to install it.
 - curl - [curl] is a command line tool and library for transferring data with URL syntax. curl is available in repositories of almost every Linux distribution so you can install curl easily via your package manager.
 - jq - jq is like sed for JSON data. You can use [jq] to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text. jq is available in the repositories of Debian, Ubuntu, Fedora, openSUSE, Arch (AUR), FreeBSD (FreshPorts), Solaris (OpenCSW), OS X (Homebrew). Linux and OS X binaries are also available from the Download section of jq website. If you decide to use the jq binary directly from the jq website you will have to rename it after downloading from 'jq-linux64' or 'jq-linux32' to simply 'jq'. In case of OS X rename it to 'jq' from 'jq-osx-amd64'. Here is the link to the download page of jq,
+
 [Download jq]
 
 
