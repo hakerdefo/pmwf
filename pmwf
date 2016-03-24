@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export LC_TIME=C
+export LC_ALL=C
+
 clear
 
 latit=
