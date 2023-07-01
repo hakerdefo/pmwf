@@ -80,7 +80,7 @@ $ sudo chmod a+x /usr/local/bin/jq
 Open terminal, type `pmwf`, hit Enter and you'll have current weather conditions with a 3 day weather forecast of your location right in terminal.  
 
 ### Support:
-If you like `pmwf`, please consider supporting it, even the smallest contribution goes a long way. It is quick & easy via PayPal, Buy Me a Coffee or Liberapay:  
+If you like `pmwf`, please consider supporting it, even the smallest contribution goes a long way. It is quick & easy via PayPal, Buy Me a Coffee, Liberapay or Stripe:  
 
 [![Support via PayPal](https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg)](https://paypal.me/hakerdefo)  
 [!["Buy Me A Coffee"](https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png)](https://www.buymeacoffee.com/hakerdefo)  
